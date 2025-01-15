@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ocivault
+  cloud:
+    oci:
+      config:
+        type: file
+        profile: DEFAULT
+      region:
+        static: ${REGION}
+      vault:
+        compartment: ${COMPARTMENT_OCID}
+        vault-id: ${VAULT_OCID}
+        enabled: true
+        property-refresh-interval: 10000ms
+        property-sources:
+        - vault-id: ${VAULT_OCID}
